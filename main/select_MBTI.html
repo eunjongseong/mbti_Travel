@@ -1,0 +1,80 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<title>MBTI 선택 화면</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spinkit/1.2.5/spinkit.min.css">
+<link rel="stylesheet" href="/main/2nd.css">
+
+</head>
+
+<body>
+<div id="mbti-screen">
+
+<div class="selected-mbti" id="selectedMbti">MBTI를 선택해주세요.</div>
+
+<div class="container">
+
+<button id="INTJ" onclick="selectMbti('INTJ', this)" style="background-color: #D0A8E1;">INTJ<br><span>독립적이고<br>전략적임</span></button>
+
+<button id="INTP" onclick="selectMbti('INTP', this)" style="background-color: #A6D8F7;">INTP<br><span>분석적이고<br>논리적임</span></button>
+
+<button id="ENTJ" onclick="selectMbti('ENTJ', this)" style="background-color: #F1C4A3;">ENTJ<br><span>결단력있고<br>목표지향적임</span></button>
+
+<button id="ENTP" onclick="selectMbti('ENTP', this)" style="background-color: #C4E1C1;">ENTP<br><span>독창적이고<br>재치있음</span></button>
+
+<button id="INFJ" onclick="selectMbti('INFJ', this)" style="background-color: #D0D8DB;">INFJ<br><span>통찰력있고<br>이상주의적</span></button>
+
+<button id="INFP" onclick="selectMbti('INFP', this)" style="background-color: #F9B6B6;">INFP<br><span>공감능력이<br>뛰어남</span></button>
+
+<button id="ENFJ" onclick="selectMbti('ENFJ', this)" style="background-color: #F9E0A0;">ENFJ<br><span>따뜻하고<br>카리스마있음</span></button>
+
+<button id="ENFP" onclick="selectMbti('ENFP', this)" style="background-color: #A8D9D9;">ENFP<br><span>창의적이고<br>열정적임</span></button>
+
+<button id="ISTJ" onclick="selectMbti('ISTJ', this)" style="background-color: #B8B9C3;">ISTJ<br><span>신중하고<br>철저함</span></button>
+
+<button id="ISFJ" onclick="selectMbti('ISFJ', this)" style="background-color: #A2D9D0;">ISFJ<br><span>차분하며<br>친근함</span></button>
+
+<button id="ESTJ" onclick="selectMbti('ESTJ', this)" style="background-color: #FFB59D;">ESTJ<br><span>효율적이고<br>현실적임</span></button>
+
+<button id="ESFJ" onclick="selectMbti('ESFJ', this)" style="background-color: #FFB0B3;">ESFJ<br><span>타인과의 관계<br>중시함</span></button>
+
+<button id="ISTP" onclick="selectMbti('ISTP', this)" style="background-color: #B8C7E4;">ISTP<br><span>호기심과<br>자신감이 넘침</span></button>
+
+<button id="ISFP" onclick="selectMbti('ISFP', this)" style="background-color: #D9E5C4;">ISFP<br><span>예술적이며<br>개성있음</span></button>
+
+<button id="ESTP" onclick="selectMbti('ESTP', this)" style="background-color: #A8C8F2;">ESTP<br><span>문제해결에<br>강함</span></button>
+
+<button id="ESFP" onclick="selectMbti('ESFP', this)" style="background-color: #D8F4E2;">ESFP<br><span>즐거움을<br>중요시함</span></button>
+
+</div>
+
+<button class="next-button" id="nextButton" onclick="goToNextScreen()">다음</button>
+
+</div>
+
+<script src="/main/2nd.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

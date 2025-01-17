@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전라북도 선택</title>
+    <link rel="stylesheet" href="/selectLocal/3rd.css">
+</head>
+<body>
+    <div class="mbti-banner">
+        <span>지역</span>
+    </div>
+
+
+
+    <div class="single-column">
+        <button class="button" onclick="goToSuggestion('jeonju')">
+            <img src="/img/전주.jpg" alt="">  </button>
+        <button class="button" onclick="goToSuggestion('iksan')">
+            <img src="/img/익산.webp" alt=""></button>
+        <button class="button" onclick="goToSuggestion('kunsan')">
+            <img src="/img/군산.png" alt=""></button>
+        <button class="button" onclick="goToSuggestion('joengeup')">
+            <img src="/img/정읍.png" alt=""></button>
+
+        <button class="button" onclick="goToSuggestion('namwon')">
+            <img src="/img/남원.jpg" alt=""></button>
+        <button class="button" onclick="goToSuggestion('kimjae')">
+            <img src="/img/김제.png" alt=""></button>
+        <button class="button" onclick="goToSuggestion('wanju')">
+            <img src="/img/완주.jfif" alt=""></button>
+        <button class="button" onclick="goToSuggestion('jinan')">
+            <img src="/img/진안.png" alt=""></button>
+
+        <button class="button" onclick="goToSuggestion('muju')">
+            <img src="/img/무주.png" alt=""></button>
+        <button class="button" onclick="goToSuggestion('jangsu')">
+            <img src="/img/장수.png" alt=""></button>
+        <button class="button" onclick="goToSuggestion('imsil')">
+            <img src="/img/임실.png" alt=""></button>
+        <button class="button" onclick="goToSuggestion('sunchang')">
+            <img src="/img/순창.jfif" alt=""></button>
+
+        <button class="button" onclick="goToSuggestion('gochang')">
+            <img src="/img/고창.png" alt=""></button>
+        <button class="button" onclick="goToSuggestion('buan')">
+            <img src="/img/부안.jfif" alt=""></button>
+
+            <!-- 다음 버튼 -->
+        <button id="fetchButton">다음</button>
+
+    </div>
+
+    
+    <div id="loading">Loading...</div>
+        <h1 id="ipAddress"></h1>
+
+
+    <script src="/selectLocal/3rd.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</body>
+</html>

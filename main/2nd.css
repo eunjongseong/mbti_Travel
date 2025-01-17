@@ -1,0 +1,140 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Poppins;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    }
+    
+#mbti-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    }
+.container {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 10px;
+max-width: 400px;
+margin-top: 20px;
+}
+.container button span {
+font-family: Poppins;
+font-size: 0.8rem;
+margin-top: 5px;
+color: black;
+line-height: 1.3; /* 줄 간격을 넓게 설정 */
+white-space:nowrap;
+}
+    
+.selected-mbti {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #333;
+    border: 2px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 1em;
+    text-align: center;
+    }
+#selectedMbti {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: black;
+    font-weight: bold;
+    }
+    
+ 
+button {
+color: black;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+width: 90px;
+height: 90px;
+padding: 8px;
+font-size: 1rem;
+font-family: Poppins;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s, color 0.3s;
+border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    button span {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    color: black;
+    font-family: Poppins;
+    
+    }
+    
+    .next-button {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    background-color: #ccc;
+    color: white;
+    border: solid;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 80%;
+    height: 50%;
+    max-width: 300px;
+    transition: background-color 0.3s;
+    margin-top: 30px;
+    align-self: center;
+    }
+    
+    #loading-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+    
+    .sk-circle {
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    }
+    
+    .sk-circle .sk-child {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

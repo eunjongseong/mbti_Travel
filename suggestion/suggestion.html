@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>데이터 표시</title>
+  <link rel="stylesheet" href="/suggestion/4rd.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+  <div class="header" id="header">
+    <div id="mbti-type">MBTI 유형: 선택된 MBTI 없음</div>
+    <div id="region-type">지역: 선택된 지역 없음</div>
+  </div>
+  <div class="tab-menu">
+    <button class="tab active" onclick="showCategory('tourist_attraction')">관광지</button>
+    <button class="tab" onclick="showMap()">지도</button>
+  </div>
+
+  <div class="filter-menu">
+  </div>
+
+  <div id="map-container" style="display: none;"></div>
+
+  <div id="map-container" style="display: none;">
+  </div>
+
+  <div class="content">
+    <div class="left-pane">
+      <h2>사용자가 선택한 MBTI</h2>
+      <p>MBTI 유형: <span id="mbti-type">선택된 MBTI 없음</span></p>
+      <div class="description-area" id="descriptionArea"></div>
+      <div id="place-description">
+        <h3>장소 설명</h3>
+        <p id="description-content"></p> 
+      </div>
+    </div>
+    
+    <div class="right-pane"></div>
+  </div>
+
+  <div class="place-list"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/suggestion/map.js"></script>
+
+  <script src="/suggestion/4rd.js"></script>
+
+  <script>
+    function loadScript(src, callback) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = src;
+      script.async = true; 
+      script.onload = callback; 
+      script.onerror = function(error) {
+          console.error('Failed to load script:', error);
+          alert('지도 로딩 중 오류가 발생했습니다.'); 
+      };
+      document.head.appendChild(script);
+    }
+    
+    function initializeMap() {
+        console.log("initializeMap called"); // 함수 호출 로그
+        var container = document.getElementById('map-container');
+        console.log("Map container:", container);
+    
+        // container가 null인 경우 함수 실행 중단
+        if (!container) {
+            console.error('Map container not found');
+            return; // 함수 실행 중단
+        }
+    
+        var options = {
+            center: new kakao.maps.LatLng(35.7175, 127.153),
+            level: 3
+        };
+    
+        var map = new kakao.maps.Map(container, options);
+        if (!map || !map.setCenter) {
+            console.error('Map object is not properly initialized:', map);
+            return;
+        }
+    
+        console.log("Map initialized:", map); // 지도 객체 로깅
+    
+        var marker = null;
+    
+        window.showLocation = function(lat, lon, placeName, address) {
+            console.log("Showing location:", lat, lon, placeName);
+    
+            if (!lat || !lon) {
+                console.error('위도와 경도가 필요합니다.');
+                return;
+            }
+        
+            // 위도와 경도가 유효한 숫자인지 확인
+            if (typeof lat !== 'number' || typeof lon !== 'number') {
+                console.error('유효하지 않은 위도 또는 경도:', lat, lon);
+                return;
+            }
+        
+            var position = new kakao.maps.LatLng(lat, lon);
+        
+            map.setCenter(position);
+        
+            if (marker) {
+                marker.setMap(null);
+            }
+            marker = new kakao.maps.Marker({
+                position: position,
+                map: map
+            });
+        
+            var infowindow = new kakao.maps.InfoWindow({
+                content: `<div><b>${placeName}</b><br>위도: ${lat}<br>경도: ${lon}<br>${address ? '주소: ' + address : ''}</div>`
+            });
+            infowindow.open(map, marker);
+        };
+    }
+
+    loadScript(`//dapi.kakao.com/v2/maps/sdk.js?appkey=02ed239025c31e1c38722b224cff3d12&libraries=services,clusterer,drawing&autoload=false`, () => {
+        kakao.maps.load(() => {
+          initializeMap(); // API 로드 후 지도 초기화
+        });
+      });
+    
+    function showLocations(locations) {
+        console.log("Showing locations on map:", locations);
+        if (!map) {
+            console.error('지도가 초기화되지 않았습니다.');
+            return;
+        }
+        if(locations.length === 0){
+            console.log('추천 장소가 없습니다')
+            return;
+        }
+        locations.forEach(location => {
+            showLocation(location.latitude, location.longitude, location.place, location.address);
+        });
+    }
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>
